@@ -1,5 +1,6 @@
-package com.randalldev.myapplication
+package com.randalldev.learncompose
 
+import android.content.Intent
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -27,9 +28,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.randalldev.myapplication.ui.theme.LearnComposeTheme
+import com.randalldev.basiclayoutscodelab.BasicLayoutsActivity
+import com.randalldev.learncompose.ui.theme.LearnComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +81,7 @@ fun Greeting(name: String) {
 
 @Composable
 fun OnboardingScreen(modifier: Modifier = Modifier, onContinueClicked: () -> Unit) {
+    val context = LocalContext.current
 
     Column(
         modifier = modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
@@ -85,6 +89,12 @@ fun OnboardingScreen(modifier: Modifier = Modifier, onContinueClicked: () -> Uni
         Text(text = "Welcome to the Basics Codelab!")
         Button(modifier = Modifier.padding(24.dp), onClick = onContinueClicked) {
             Text(text = "Continue!")
+        }
+        Button(modifier = Modifier.padding(24.dp), onClick = {
+            val intent = Intent(context, BasicLayoutsActivity::class.java)
+            context.startActivity(intent)
+        }) {
+            Text(text = "Go 2 BasicLayout!")
         }
     }
 }

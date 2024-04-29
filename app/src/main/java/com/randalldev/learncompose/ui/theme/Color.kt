@@ -1,4 +1,4 @@
-package com.randalldev.myapplication.ui.theme
+package com.randalldev.learncompose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
