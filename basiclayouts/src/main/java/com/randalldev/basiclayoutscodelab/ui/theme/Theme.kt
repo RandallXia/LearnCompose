@@ -1,4 +1,4 @@
-package com.randalldev.myapplication.ui.theme
+package com.randalldev.basiclayoutscodelab.ui.theme
 
 import android.app.Activity
 import android.os.Build
