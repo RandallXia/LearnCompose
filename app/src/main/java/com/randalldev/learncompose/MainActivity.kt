@@ -31,8 +31,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.randalldev.basiclayoutscodelab.BasicLayoutsActivity
+import com.randalldev.layouts.BasicLayoutsActivity
 import com.randalldev.learncompose.ui.theme.LearnComposeTheme
+import com.randalldev.state.StateActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +85,9 @@ fun OnboardingScreen(modifier: Modifier = Modifier, onContinueClicked: () -> Uni
     val context = LocalContext.current
 
     Column(
-        modifier = modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(text = "Welcome to the Basics Codelab!")
         Button(modifier = Modifier.padding(24.dp), onClick = onContinueClicked) {
@@ -95,6 +98,12 @@ fun OnboardingScreen(modifier: Modifier = Modifier, onContinueClicked: () -> Uni
             context.startActivity(intent)
         }) {
             Text(text = "Go 2 BasicLayout!")
+        }
+        Button(modifier = Modifier.padding(24.dp), onClick = {
+            val intent = Intent(context, StateActivity::class.java)
+            context.startActivity(intent)
+        }) {
+            Text(text = "Go 2 BasicState!")
         }
     }
 }
