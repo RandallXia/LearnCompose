@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "LearnCompose"
 include(":app")
-include(":basiclayouts")
+include(":layouts")
+include(":state")
