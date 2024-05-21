@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import com.randalldev.layouts.BasicLayoutsActivity
 import com.randalldev.learncompose.ui.theme.LearnComposeTheme
 import com.randalldev.state.StateActivity
+import com.randalldev.sunflower.GardenActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,6 +105,12 @@ fun OnboardingScreen(modifier: Modifier = Modifier, onContinueClicked: () -> Uni
             context.startActivity(intent)
         }) {
             Text(text = "Go 2 BasicState!")
+        }
+        Button(modifier = Modifier.padding(24.dp), onClick = {
+            val intent = Intent(context, GardenActivity::class.java)
+            context.startActivity(intent)
+        }) {
+            Text(text = "Go 2 Migration!")
         }
     }
 }

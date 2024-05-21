@@ -17,3 +17,4 @@ rootProject.name = "LearnCompose"
 include(":app")
 include(":layouts")
 include(":state")
+include(":migration")
